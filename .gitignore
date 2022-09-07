@@ -1,6 +1,3 @@
-Scripts/
-pyvenv.cfg
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -16,12 +13,14 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+Scripts/
 .eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
+pyvenv.cfg
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
