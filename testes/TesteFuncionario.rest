@@ -2,16 +2,16 @@
 GET http://localhost:8000/funcionario/0 HTTP/1.1
 
 ### Verbo POST - adicionar
-POST http://localhost:8000/funcionario/1 HTTP/1.1
+POST http://localhost:8000/funcionario/ HTTP/1.1
 content-type : application/json
 
 {
-    "nome" : "Funcionario 1",
-    "matricula" : "12345",
-    "cpf" : "01923874656",
+    "nome" : "Kevelin Mondadori",
+    "matricula" : "123",
+    "cpf" : "01271559960",
     "telefone" : "49988234567",
     "grupo" : 1,
-    "senha" : "bolinhas"
+    "senha" : "bolinhas1"
 }
 
 ### Verbo PUT - atualiza

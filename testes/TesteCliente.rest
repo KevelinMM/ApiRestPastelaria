@@ -2,7 +2,7 @@
 GET http://localhost:8000/cliente/0 HTTP/1.1
 
 ### Verbo POST - adicionar
-POST http://localhost:8000/cliente/1 HTTP/1.1
+POST http://localhost:8000/cliente/ HTTP/1.1
 content-type : application/json
 
 {
