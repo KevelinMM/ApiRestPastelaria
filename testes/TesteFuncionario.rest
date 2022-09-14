@@ -1,5 +1,5 @@
 ### Verbo GET – listar
-GET http://localhost:8000/funcionario/0 HTTP/1.1
+GET http://localhost:8000/funcionario/ HTTP/1.1
 
 ### Verbo POST - adicionar
 POST http://localhost:8000/funcionario/ HTTP/1.1
@@ -27,4 +27,6 @@ content-type : application/json
     "senha" : "abc"
 }
 
+### Verbo DELETE - atualiza
 DELETE http://127.0.0.1:8000/funcionario/1 HTTP/1.1
+content-type : application/json

@@ -19,5 +19,4 @@ app.include_router(ClienteDAO.router)
 app.include_router(ProdutoDAO.router)
 
 # cria, caso não existam, as tabelas de todos os modelos importados
-
 db.criaTabelas()

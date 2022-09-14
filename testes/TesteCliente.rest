@@ -1,5 +1,5 @@
 ### Verbo GET – listar
-GET http://localhost:8000/cliente/0 HTTP/1.1
+GET http://localhost:8000/cliente/ HTTP/1.1
 
 ### Verbo POST - adicionar
 POST http://localhost:8000/cliente/ HTTP/1.1
@@ -22,10 +22,11 @@ content-type : application/json
     "nome" : "Renata da Silva",
     "cpf" : "01387897465",
     "telefone" : "49982345567",
-    "compra_fiado" : 1,
+    "compra_fiado" : false,
     "dia_fiado" : 20,
     "senha" : "abcBolinhas"
 }
 
-### Verbo delete - 
-DELETE http://localhost:8000/cliente/1 HTTP/1.1
+### Verbo DELETE 
+DELETE  http://127.0.0.1:8000/cliente/1 HTTP/1.1
+content-type : application/json

@@ -18,7 +18,6 @@ class Funcionario(BaseModel):
 
 # Criar os endpoints de Funcionario: GET, POST, PUT, DELETE
 
-
 @router.get("/funcionario/", tags=["funcionario"])
 def get_funcionario():
     try:
@@ -73,7 +72,7 @@ def put_funcionario(id: int, corpo: Funcionario):
         session = db.Session()
         dados = session.query(FuncionarioDB).filter(
             FuncionarioDB.id_funcionario == id).one()
-            
+
         dados.nome = corpo.nome
         dados.matricula = corpo.matricula
         dados.cpf = corpo.cpf

@@ -75,8 +75,8 @@ def put_cliente(id: int, corpo: Cliente):
         dados.cpf = corpo.cpf
         dados.telefone = corpo.telefone
         dados.senha = corpo.senha
-        dados.compra_fiado = corpo.telefone
-        dados.dia_fiado = corpo.senha
+        dados.compra_fiado = corpo.compra_fiado
+        dados.dia_fiado = corpo.dia_fiado
         session.add(dados)
         session.commit()
         return {"msg": "Editado com sucesso!", "id": dados.id_cliente}, 201
