@@ -3,7 +3,6 @@ from sqlalchemy import Column, VARCHAR, CHAR, Integer
 
 # ORM
 
-
 class FuncionarioDB(db.Base):
     __tablename__ = 'tb_funcionario'
     id_funcionario = Column(Integer, primary_key=True,

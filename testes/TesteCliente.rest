@@ -6,7 +6,7 @@ POST http://localhost:8000/cliente/ HTTP/1.1
 content-type : application/json
 
 {
-    "nome" : "cliente 1",
+    "nome" : "Kevelin Mondadori ",
     "cpf" : "01387897465",
     "telefone" : "49982345567",
     "compra_fiado" : 1,
@@ -19,12 +19,12 @@ PUT http://127.0.0.1:8000/cliente/1 HTTP/1.1
 content-type : application/json
 
 {
-    "nome" : "altera cliente 1",
+    "nome" : "Renata da Silva",
     "cpf" : "01387897465",
     "telefone" : "49982345567",
     "compra_fiado" : 1,
     "dia_fiado" : 20,
-    "senha" : "abc"
+    "senha" : "abcBolinhas"
 }
 
 ### Verbo delete - 

@@ -6,8 +6,8 @@ POST http://localhost:8000/produto/1 HTTP/1.1
 content-type : application/json
 
 {
-    "nome" : "produto 1",
-    "descricao" : "asdasdasd",
+    "nome" : "Pastel frango",
+    "descricao" : "Pastel de frango",
     "valor_unitario" : 15.5
 }
 
@@ -16,8 +16,8 @@ PUT http://127.0.0.1:8000/produto/1 HTTP/1.1
 content-type : application/json
 
 {
-    "nome" : "altera produto 1",
-    "descricao" : "asdasdasd",
+    "nome" : "Pastel carne",
+    "descricao" : "Pastel de carne",
     "valor_unitario" : 17.5
 }
 

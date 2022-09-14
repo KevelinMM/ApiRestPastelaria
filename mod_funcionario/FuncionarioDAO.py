@@ -7,7 +7,6 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
-
 class Funcionario(BaseModel):
     codigo: int = None
     nome: str
@@ -53,10 +52,12 @@ def post_funcionario(corpo: Funcionario):
     try:
         session = db.Session()
 
-        dados = FuncionarioDB(None, corpo.nome, corpo.matricula,
-                              corpo.cpf, corpo.telefone, corpo.grupo, corpo.senha)
+        dados = FuncionarioDB(None, corpo.nome, corpo.matricula, corpo.cpf, corpo.telefone, corpo.grupo, corpo.senha)
+
         session.add(dados)
+
         session.commit()
+
         return {"msg": "Cadastrado com sucesso!", "id": dados.id_funcionario}, 200
 
     except Exception as e:
@@ -72,12 +73,14 @@ def put_funcionario(id: int, corpo: Funcionario):
         session = db.Session()
         dados = session.query(FuncionarioDB).filter(
             FuncionarioDB.id_funcionario == id).one()
+            
         dados.nome = corpo.nome
+        dados.matricula = corpo.matricula
         dados.cpf = corpo.cpf
         dados.telefone = corpo.telefone
-        dados.senha = corpo.senha
-        dados.matricula = corpo.matricula
         dados.grupo = corpo.grupo
+        dados.senha = corpo.senha
+        
         session.add(dados)
         session.commit()
         return {"msg": "Editado com sucesso!", "id": dados.id_funcionario}, 201
