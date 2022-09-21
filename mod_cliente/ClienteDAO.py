@@ -1,11 +1,14 @@
 import db
 from mod_cliente.ClienteModel import ClienteDB
 
+# import da segurança
+from fastapi import Depends
+import security
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-router = APIRouter()
-
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 class Cliente(BaseModel):
     codigo: int = None
@@ -19,7 +22,8 @@ class Cliente(BaseModel):
 # Criar os endpoints de cliente: GET, POST, PUT, DELETE
 
 
-@router.get("/cliente/", tags=["cliente"])
+@router.get("/cliente/", tags=["cliente"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def get_cliente():
     try:
         session = db.Session()
@@ -32,7 +36,8 @@ def get_cliente():
         session.close()
 
 
-@router.get("/cliente/{id}", tags=["cliente"])
+@router.get("/cliente/{id}", tags=["cliente"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def get_cliente(id: int):
     try:
         session = db.Session()
@@ -47,7 +52,8 @@ def get_cliente(id: int):
         session.close()
 
 
-@router.post("/cliente/", tags=["cliente"])
+@router.post("/cliente/", tags=["cliente"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def post_cliente(corpo: Cliente):
     try:
         session = db.Session()
@@ -65,7 +71,8 @@ def post_cliente(corpo: Cliente):
         session.close()
 
 
-@router.put("/cliente/{id}", tags=["cliente"])
+@router.put("/cliente/{id}", tags=["cliente"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def put_cliente(id: int, corpo: Cliente):
     try:
         session = db.Session()
@@ -87,7 +94,8 @@ def put_cliente(id: int, corpo: Cliente):
         session.close()
 
 
-@router.delete("/cliente/{id}", tags=["cliente"])
+@router.delete("/cliente/{id}", tags=["cliente"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def delete_cliente(id: int):
     try:
         session = db.Session()

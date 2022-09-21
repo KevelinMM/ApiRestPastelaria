@@ -2,10 +2,14 @@
 import db
 from mod_funcionario.FuncionarioModel import FuncionarioDB
 
+# import da segurança
+from fastapi import Depends
+import security
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-router = APIRouter()
+router = APIRouter( dependencies=[Depends(security.verify_token), Depends(security.verify_key)] )
 
 class Funcionario(BaseModel):
     codigo: int = None
@@ -18,7 +22,8 @@ class Funcionario(BaseModel):
 
 # Criar os endpoints de Funcionario: GET, POST, PUT, DELETE
 
-@router.get("/funcionario/", tags=["funcionario"])
+@router.get("/funcionario/", tags=["funcionario"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def get_funcionario():
     try:
         session = db.Session()
@@ -31,7 +36,8 @@ def get_funcionario():
         session.close()
 
 
-@router.get("/funcionario/{id}", tags=["funcionario"])
+@router.get("/funcionario/{id}", tags=["funcionario"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def get_funcionario(id: int):
     try:
         session = db.Session()
@@ -46,7 +52,8 @@ def get_funcionario(id: int):
         session.close()
 
 
-@router.post("/funcionario/", tags=["funcionario"])
+@router.post("/funcionario/", tags=["funcionario"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def post_funcionario(corpo: Funcionario):
     try:
         session = db.Session()
@@ -66,7 +73,8 @@ def post_funcionario(corpo: Funcionario):
         session.close()
 
 
-@router.put("/funcionario/{id}", tags=["funcionario"])
+@router.put("/funcionario/{id}", tags=["funcionario"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def put_funcionario(id: int, corpo: Funcionario):
     try:
         session = db.Session()
@@ -90,7 +98,8 @@ def put_funcionario(id: int, corpo: Funcionario):
         session.close()
 
 
-@router.delete("/funcionario/{id}", tags=["funcionario"])
+@router.delete("/funcionario/{id}", tags=["funcionario"],
+dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
 def delete_funcionario(id: int):
     try:
         session = db.Session()
