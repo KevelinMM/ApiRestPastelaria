@@ -20,8 +20,7 @@ class Produto(BaseModel):
 # Criar os endpoints de produto: GET, POST, PUT, DELETE
 
 
-@router.get("/produto/", tags=["produto"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.get("/produto/", tags=["produto"])
 def get_produto():
     try:
         session = db.Session()
@@ -34,8 +33,7 @@ def get_produto():
         session.close()
 
 
-@router.get("/produto/{id}", tags=["produto"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.get("/produto/{id}", tags=["produto"])
 def get_produto(id: int):
     try:
         session = db.Session()
@@ -50,8 +48,7 @@ def get_produto(id: int):
         session.close()
 
 
-@router.post("/produto/", tags=["produto"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.post("/produto/", tags=["produto"])
 def post_produto(corpo: Produto):
     try:
         session = db.Session()
@@ -69,8 +66,7 @@ def post_produto(corpo: Produto):
         session.close()
 
 
-@router.put("/produto/{id}", tags=["produto"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.put("/produto/{id}", tags=["produto"])
 def put_produto(id: int, corpo: Produto):
     try:
         session = db.Session()
@@ -90,8 +86,7 @@ def put_produto(id: int, corpo: Produto):
         session.close()
 
 
-@router.delete("/produto/{id}", tags=["produto"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.delete("/produto/{id}", tags=["produto"])
 def delete_produto(id: int):
     try:
         session = db.Session()

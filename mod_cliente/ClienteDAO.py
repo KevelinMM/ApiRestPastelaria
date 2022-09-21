@@ -22,8 +22,7 @@ class Cliente(BaseModel):
 # Criar os endpoints de cliente: GET, POST, PUT, DELETE
 
 
-@router.get("/cliente/", tags=["cliente"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.get("/cliente/", tags=["cliente"])
 def get_cliente():
     try:
         session = db.Session()
@@ -36,8 +35,7 @@ def get_cliente():
         session.close()
 
 
-@router.get("/cliente/{id}", tags=["cliente"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.get("/cliente/{id}", tags=["cliente"])
 def get_cliente(id: int):
     try:
         session = db.Session()
@@ -52,8 +50,7 @@ def get_cliente(id: int):
         session.close()
 
 
-@router.post("/cliente/", tags=["cliente"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.post("/cliente/", tags=["cliente"])
 def post_cliente(corpo: Cliente):
     try:
         session = db.Session()
@@ -71,8 +68,7 @@ def post_cliente(corpo: Cliente):
         session.close()
 
 
-@router.put("/cliente/{id}", tags=["cliente"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.put("/cliente/{id}", tags=["cliente"])
 def put_cliente(id: int, corpo: Cliente):
     try:
         session = db.Session()
@@ -94,8 +90,7 @@ def put_cliente(id: int, corpo: Cliente):
         session.close()
 
 
-@router.delete("/cliente/{id}", tags=["cliente"],
-dependencies=[Depends(security.verify_token), Depends(security.verify_key)])
+@router.delete("/cliente/{id}", tags=["cliente"])
 def delete_cliente(id: int):
     try:
         session = db.Session()
