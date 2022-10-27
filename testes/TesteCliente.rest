@@ -3,12 +3,6 @@ GET http://localhost:8000/cliente/ HTTP/1.1
 x-token: abcBolinhasToken
 x-key: abcBolinhasKey
 
-### Verbo GET – listar todos
-curl -X 'GET' \
-    'http://localhost:8000/funcionario/' \
-    -H 'accept: application/json' \
-    -H 'x-token: abcBolinhasToken' \
-    -H 'x-key: abcBolinhasKey'
 
 ### Verbo POST - adicionar
 POST http://localhost:8000/cliente/ HTTP/1.1
@@ -17,9 +11,9 @@ x-token: abcBolinhasToken
 x-key: abcBolinhasKey
 
 {
-    "nome" : "Kevelin Mondadori ",
-    "cpf" : "01387897465",
-    "telefone" : "49982345567",
+    "nome" : "Joaoo ",
+    "cpf" : "6541351321",
+    "telefone" : "4998345567",
     "compra_fiado" : 1,
     "dia_fiado" : 20,
     "senha" : "abc"

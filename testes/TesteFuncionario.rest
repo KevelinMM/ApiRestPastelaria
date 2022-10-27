@@ -17,11 +17,11 @@ x-token: abcBolinhasToken
 x-key: abcBolinhasKey
 
 {
-    "nome" : "Kevelin Mondadori",
-    "matricula" : "123",
-    "cpf" : "01271559960",
-    "telefone" : "49988234567",
-    "grupo" : 1,
+    "nome" : "Thiago Sartorel",
+    "matricula" : "12345",
+    "cpf" : "012715590",
+    "telefone" : "499834567",
+    "grupo" : 2,
     "senha" : "bolinhas1"
 }
 
