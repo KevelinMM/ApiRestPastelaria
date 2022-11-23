@@ -74,8 +74,7 @@ def post_funcionario(corpo: Funcionario):
 def put_funcionario(id: int, corpo: Funcionario):
     try:
         session = db.Session()
-        dados = session.query(FuncionarioDB).filter(
-            FuncionarioDB.id_funcionario == id).one()
+        dados = session.query(FuncionarioDB).filter(FuncionarioDB.id_funcionario == id).one()
 
         dados.nome = corpo.nome
         dados.matricula = corpo.matricula
@@ -98,8 +97,7 @@ def put_funcionario(id: int, corpo: Funcionario):
 def delete_funcionario(id: int):
     try:
         session = db.Session()
-        dados = session.query(FuncionarioDB).filter(
-            FuncionarioDB.id_funcionario == id).one()
+        dados = session.query(FuncionarioDB).filter(FuncionarioDB.id_funcionario == id).one()
         session.delete(dados)
         session.commit()
         return {"msg": "Excluido com sucesso!", "id": dados.id_funcionario}, 201
